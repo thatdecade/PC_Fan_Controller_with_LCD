@@ -1,19 +1,19 @@
 # PC Fan Controller with LCD
-Controls a 12V PC fan and displays status on LCD. Bargraph and tachometer RPM speed. Basic operation is below.
+Arduino to control a 12V PC fan and displays status on LCD. Bargraph and tachometer RPM speed. Basic operation is below.
 
-Code is highly configurable, and will support a variety of LCDs.
  - Supports any 4-bit or 8-bit LCD.  Default is 16x2 characters
- - Button input is software debounced
- - Main loop has a scheduler 
+ - Button inputs are software debounced
+ - Main loop uses a scheduler 
+ - See code for list of configurable values
 
 # onoff_state = SYSTEM_OFF
 Pressing on/off will:
-* Command mosfet to power to the fan
+* Command mosfet/relay to power to the fan
 * Set the throttle to 20% (first boot) or last selected
 
 # onoff_state = SYSTEM_ON
 Pressing on/off will:
-* Command mosfet to remove power from the fan
+* Command mosfet/relay to remove power from the fan
 * Set the throttle to OFF
 Use the +/- buttons to go up and down in 10% chunks
 HOLDING (3 second count) on/off will set throttle to MAX_FAN_SPEED
